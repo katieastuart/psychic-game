@@ -12,61 +12,21 @@
         <h1>The Psychic Game</h1>
 
         <p>Guess what letter I'm thinking of.</p>
+
+        <p>Wins: 0</p>
+
+        <p>Losses: 0</p>
+
+        <p>Guesses left: 9</p>
+
+        <p>Your guesses so far:</p>
+
     </div> 
 
-    <script>
         
-        // creating array for choices
-        var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-        
-        // creating variables for wins, losses and guesses left
-        var wins = 0;
-        var losses = 0;
-        var guessesLeft = 9;
+    <script src="./assets/javascript/game.js"></script>
 
-        // function runs when user presses a key
-        document.onkeyup = function(event) {
-
-            // determines which key was pressed
-            var userGuess = event.key
-            
-            // randomly selects a letter
-            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-            // prints choices to console log
-            console.log("next round");
-            console.log("computer guess: " + computerGuess);
-            console.log("user guess: " + userGuess);
-
-        // logic determines wins and losses
-        if (userGuess === computerGuess) {
-            wins++;
-            guessesLeft = 9
-        } else if (userGuess != computerGuess) {
-            losses++;
-            guessesLeft = guessesLeft - 1;
-        }
-
-        // prints wins and losses to  console log
-        console.log("wins: " + wins);
-        console.log("losses: " + losses);
-        console.log("guesses left: " + guessesLeft);
-
-        //variable to hold html that keeps track of game
-        var html = 
-            "<h1>The Psychic Game</h1>" +
-            "<p>Guess what letter I'm thinking of.</p>" +
-            "<p>Wins: " + wins + "</p>" +
-            "<p>Losses: " + losses + "</p>" +
-            "<p>Guesses left: " + guessesLeft + "</p>" +
-            "<p>Your guesses so far: " + userGuess + "</p>";
-
-        // Set the inner HTML contents of the #game div to our html string
-        document.querySelector("#game").innerHTML = html;
-
-        }
-
-    </script>
 
 </body>
 </html>
+
